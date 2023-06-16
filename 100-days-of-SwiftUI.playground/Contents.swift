@@ -70,3 +70,25 @@ print(counter)
 let number = 120
 print(number.isMultiple(of: 3))
 print(120.isMultiple(of: 3))
+
+let number2 = 0.1 + 0.2
+print(number2)
+
+let a = 1
+let b = 2.0
+//let c = a + b // causes error, cannot add integer and double
+let c1 = a + Int(b)
+let c2 = Double(a) + b
+
+let double1 = 3.1
+let double2 = 3131.3131
+let double3 = 3.0
+let int1 = 3
+
+var name2 = " Nicolas Cage"
+name2 = "John Travolta"
+// name2 = 57 // causes error, type safety
+
+var rating = 5.0
+rating *= 2
+
