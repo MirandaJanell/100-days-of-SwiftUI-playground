@@ -1,43 +1,26 @@
-// Day 2 - How to store truth with Booleans
+// Day 2 - How to join strings together
 
-let filename = "paris.jpg"
-print(filename.hasSuffix(".jpg"))
+let firstPart = "Hello, "
+let secondPart = "world!"
+let greeting = firstPart + secondPart
 
-let number = 120
-print(number.isMultiple(of: 3))
+let people = "Haters"
+let action = "hate"
+let lyric = people + " gonna " + action
+print(lyric)
 
-let goodDogs = true
-let gameOver = false // damn you for making me think of the game, it truly never ends
+let luggageCode = "1" + "2" + "3" + "4" + "5" // creates multiple temporary strings
 
-let isMultiple = 120.isMultiple(of: 3)
+let quote = "Then he tapped a sign saying \"Believe\" and walked away."
 
-var isAuthenticated = false;
-isAuthenticated = !isAuthenticated
-print(isAuthenticated)
-isAuthenticated = !isAuthenticated
-print(isAuthenticated)
+let name = "Taylor"
+let age = 26
+let message = "Hello, my name is \(name) and I'm \(age) years old." // string interpolation is better
+print(message)
 
-var gameOver1 = false
-print(gameOver1)
-gameOver1.toggle()
-print(gameOver1)
+let number = 11
+//let missionMessage = "Apollo " + number + " landed on the moon." // not allowed
+let missionMessage = "Apollo " + String(number) + " landed on the moon." // uses temporary strings
+let missionMessage1 = "Apollo \(number) landed on the moon." // string interpolation
 
-// do we get boolean operators?
-// not part of the lesson, just my curiousity
-let andTestTrue = goodDogs && gameOver1
-print(andTestTrue)
-let andTestFalse = goodDogs && gameOver
-print(andTestFalse)
-let orTestTrue = goodDogs || gameOver
-print(orTestTrue)
-let orTestFalse = gameOver || isAuthenticated
-print(orTestFalse)
-//let xorTestTrue1 = goodDogs ^^ gameOver // cannot find operator
-let eqTrue = goodDogs == gameOver1
-print(eqTrue)
-let eqFalse = goodDogs == gameOver
-print(eqFalse)
-let neqTrue = goodDogs != gameOver
-print(neqTrue)
-let neqFalse = goodDogs != gameOver1
-print(neqFalse)
+print("5 x 5 is \(5 * 5)") // expressions are allowed in
