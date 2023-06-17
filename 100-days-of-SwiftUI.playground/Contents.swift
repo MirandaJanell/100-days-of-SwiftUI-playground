@@ -1,12 +1,26 @@
-// Day 3 - How to use sets for fast data lookup
+// Day 3 - How to create and use enums
 
-let people = Set(["Denzel Washington", "Tom Cruise", "Nicolas Cage", "Samuel L Jackson"])
-print(people)
+var selected = "Monday" // ok
+selected = "Tuesday" // thats fine
+selected = "January" // uh..
+selected = "Friday " // failhorn
 
-var people2 = Set<String>()
-people2.insert("Denzel Washington")
-people2.insert("Tom Cruise")
-people2.insert("Nicolas Cage")
-people2.insert("Samuel L Jackson")
-print(people2.count)
-print(people2.sorted())
+enum Weekday {
+    case monday
+    case tuesday
+    case wednesday
+    case thursday
+    case friday
+}
+
+var day = Weekday.monday
+day = Weekday.tuesday
+day = Weekday.friday
+
+enum Weekday2 {
+    case monday, tuesday, wednesday, thursday, friday
+}
+
+var day2 = Weekday2.monday
+day = .tuesday
+day = .friday
