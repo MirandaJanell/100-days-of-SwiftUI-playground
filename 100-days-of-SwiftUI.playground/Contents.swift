@@ -1,26 +1,39 @@
-// Day 3 - How to create and use enums
+// Day 4 - How to use type annotations
 
-var selected = "Monday" // ok
-selected = "Tuesday" // thats fine
-selected = "January" // uh..
-selected = "Friday " // failhorn
+// inferred types
+let surnameInferred = "Lasso"
+var scoreInferred = 0
 
-enum Weekday {
-    case monday
-    case tuesday
-    case wednesday
-    case thursday
-    case friday
+// explicit types
+let surname: String = "Lasso"
+var score: Int = 0
+var score2: Double = 0 // Swift would have inferred Int w/o : Double
+let playerName: String = "Roy"
+var luckyNumber: Int = 13
+let pi: Double = 3.141
+var isAuthenticated: Bool = true
+var albums: [String] = ["Red", "Fearless"]
+var user: [String: String] = ["id": "@twostraws"]
+var books: Set<String> = Set(["The Bluest Eye", "Foundation", "Girl, Woman, Other"])
+
+// ways to create arrays
+var soda: [String] = ["Coke", "Pepsi", "Irn-Bru"] // intialized
+var teams: [String] = [String]() // explicit type w/ initialization
+var cities: [String] = [] // explicit type w/ empty array
+var clues = [String]() // implicity type w/ initialization
+
+// enums
+enum UIStyle {
+    case light, dark, system
 }
+var style = UIStyle.light
+style = .dark
 
-var day = Weekday.monday
-day = Weekday.tuesday
-day = Weekday.friday
+// unassigned constants
+let username: String
+username = "@twostraws"
+print(username)
 
-enum Weekday2 {
-    case monday, tuesday, wednesday, thursday, friday
-}
-
-var day2 = Weekday2.monday
-day = .tuesday
-day = .friday
+// type safety
+// 5 + true // not allowed
+//let score: Int = "Zero" // not allowed
