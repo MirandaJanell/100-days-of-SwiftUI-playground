@@ -1,67 +1,80 @@
-// Day 5 - How to check multiple conditions
+// Day 5 - How to use switch statements to check multiple conditions
 
-let age = 16
-
-if age >= 18 {
-    print("You can vote in the next election.")
+enum Weather {
+    case sun, rain, wind, snow, unknown
 }
 
-if age < 18 {
-    print("Sorry, you're too young to vote.")
-}
+let forecast = Weather.sun
 
-if age >= 18 {
-    print("You can vote in the next election.")
+if forecast == .sun {
+    print("It should be a nice day.")
+} else if forecast == .rain {
+    print("Pack an umbrella.")
+} else if forecast == .wind {
+    print("Wear something warm")
+} else if forecast == .rain {
+    print("School is cancelled.")
 } else {
-    print("Sorry, you're too young to vote.")
+    print("Our forecast generator is broken!")
 }
 
-let a = false
-let b = true
-
-if a {
-    print("Code to run if a is true")
-} else if b {
-    print("Code to run if a is false but b is true")
-} else {
-    print("Code to run if both a and b are false")
+switch forecast {
+case .sun:
+    print("It should be a nice day.")
+case .rain:
+    print("Pack an umbrella.")
+case .wind:
+    print("Wear something warm")
+case .snow:
+    print("School is cancelled.")
+case .unknown:
+    print("Our forecast generator is broken!")
 }
 
-let temp = 25
+let place = "Metropolis"
 
-if temp > 20 {
-    if temp < 30 {
-        print("It's a nice day.")
-    }
+switch place {
+case "Gotham":
+    print("You're Batman!")
+case "Mega-City One":
+    print("You're Judge Dredd!")
+case "Wakanda":
+    print("You're Black Panther!")
+default:
+    print("Who are you?")
 }
 
-if temp > 20 && temp < 30 {
-    print("It's a nice day.")
+let day = 5
+print("My true love gave to me…")
+
+switch day {
+case 5:
+    print("5 golden rings")
+case 4:
+    print("4 calling birds")
+case 3:
+    print("3 French hens")
+case 2:
+    print("2 turtle doves")
+default:
+    print("A partridge in a pear tree")
 }
 
-let userAge = 14
-let hasParentalConsent = true
+print("My true love gave to me…")
 
-if userAge >= 18 || hasParentalConsent == true {
-    print("You can buy the game")
-}
-
-if userAge >= 18 || hasParentalConsent {
-    print("You can buy the game")
-}
-
-enum TransportOption {
-    case airplane, helicopter, bicycle, car, scooter
-}
-
-let transport = TransportOption.airplane
-
-if transport == .airplane || transport == .helicopter {
-    print("Let's fly!")
-} else if transport == .bicycle {
-    print("I hope there's a bike path…")
-} else if transport == .car {
-    print("Time to get stuck in traffic.")
-} else {
-    print("I'm going to hire a scooter now!")
+switch day {
+case 5:
+    print("5 golden rings")
+    fallthrough
+case 4:
+    print("4 calling birds")
+    fallthrough
+case 3:
+    print("3 French hens")
+    fallthrough
+case 2:
+    print("2 turtle doves")
+    fallthrough
+default:
+    print("A partridge in a pear tree")
 }
