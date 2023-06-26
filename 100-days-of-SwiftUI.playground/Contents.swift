@@ -1,35 +1,45 @@
-// Day 5 - How to use the ternary conditional operator for quick tests
+// Day 6 How to use a for loop to repeat work
 
-let age = 18
-let canVote = age >= 18 ? "Yes" : "No"
+let platforms = ["iOS", "macOS", "tvOS", "watchOS"]
 
-let hour = 23
-print(hour < 12 ? "It's before noon" : "It's after noon")
-
-let names = ["Jayne", "Kaylee", "Mal"]
-let crewCount = names.isEmpty ? "No one" : "\(names.count) people"
-print(crewCount)
-
-enum Theme {
-    case light, dark
+for os in platforms {
+    print("Swift works great on \(os).")
 }
 
-let theme = Theme.dark
+for name in platforms {
+    print("Swift works great on \(name).")
+}
 
-let background = theme == .dark ? "black" : "white"
-print(background)
+for rubberChicken in platforms {
+    print("Swift works great on \(rubberChicken).")
+}
 
+for i in 1...12 {
+    print("5 x \(i) is \(5 * i)")
+}
 
-print(hour < 12 ? "It's before noon" : "It's after noon")
-/*print( // Invalid code
-    if hour < 12 {
-        "It's before noon"
-    } else {
-        "It's after noon"
+for i in 1...12 {
+    print("The \(i) times table")
+    
+    for j in 1...12 {
+        print("    \(j) x \(i) is \(j * i)")
     }
-)*/
-if hour < 12 {
-    print("It's before noon")
-} else {
-    print("It's after noon")
+    
+    print()
 }
+
+for i in 1...5 {
+    print("Counting from 1 through 5: \(i)")
+}
+
+for i in 1..<5 {
+    print("Counting from 1 up to 5: \(i)")
+}
+
+var lyric = "Haters gonna"
+
+for _ in 1...5 {
+    lyric += " hate"
+}
+
+print(lyric)
