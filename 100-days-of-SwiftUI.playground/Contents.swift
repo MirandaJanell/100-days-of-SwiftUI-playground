@@ -1,26 +1,27 @@
-// Day 6 How to use a while loop to repeat work
-var countdown = 10
+// Day 6 How to skip loop items with break and continue
 
-while countdown > 0 {
-    print("\(countdown)...")
-    countdown -= 1
+let filenames = ["me.jpg", "work.txt", "sophie.jpg", "logo.psd"]
+
+for filename in filenames {
+    if filename.hasSuffix(".jpg") == false {
+        continue
+    }
+    
+    print("Found picture: \(filename)")
 }
 
-print("Blast off!")
+let number1 = 4
+let number2 = 14
+var multiples = [Int]()
 
-let id = Int.random(in: 1...1000)
-let amount = Double.random(in: 0...1)
-
-// create an integer to store our roll
-var roll = 0
-
-// carry on looping until we reach 20
-while roll != 20 {
-    // roll a new dice and print what it was
-    roll = Int.random(in: 1...20)
-    print("I rolled a \(roll)")
+for i in 1...100_000 {
+    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
+        multiples.append(i)
+        
+        if multiples.count == 10 {
+            break
+        }
+    }
 }
 
-// i we're here it means the loop ended - we got a 20!
-print("Critical hit!")
-
+print(multiples)
