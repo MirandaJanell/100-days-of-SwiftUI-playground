@@ -1,27 +1,16 @@
-// Day 6 How to skip loop items with break and continue
+// Day 6 Checkpoint 3
 
-let filenames = ["me.jpg", "work.txt", "sophie.jpg", "logo.psd"]
+let fizz = 3
+let buzz = 5
 
-for filename in filenames {
-    if filename.hasSuffix(".jpg") == false {
-        continue
-    }
-    
-    print("Found picture: \(filename)")
-}
-
-let number1 = 4
-let number2 = 14
-var multiples = [Int]()
-
-for i in 1...100_000 {
-    if i.isMultiple(of: number1) && i.isMultiple(of: number2) {
-        multiples.append(i)
-        
-        if multiples.count == 10 {
-            break
-        }
+for i in 1...100 {
+    if i.isMultiple(of: fizz) && i.isMultiple(of: buzz) {
+        print("FizzBuzz")
+    } else if i.isMultiple(of: fizz) {
+        print("Fizz")
+    } else if i.isMultiple(of: buzz) {
+        print("Buzz")
+    } else {
+        print("\(i)")
     }
 }
-
-print(multiples)
