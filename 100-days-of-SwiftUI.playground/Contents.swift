@@ -1,16 +1,26 @@
-// Day 6 Checkpoint 3
+// Day 7 - How to reuse code with functions
 
-let fizz = 3
-let buzz = 5
+func showWelcome() {
+    print("Welcome to my app!")
+    print("By default This prints out a conversion")
+    print("chart from centimeters to inches, but you")
+    print("can also set a custom range if you want.")
+}
 
-for i in 1...100 {
-    if i.isMultiple(of: fizz) && i.isMultiple(of: buzz) {
-        print("FizzBuzz")
-    } else if i.isMultiple(of: fizz) {
-        print("Fizz")
-    } else if i.isMultiple(of: buzz) {
-        print("Buzz")
-    } else {
-        print("\(i)")
+showWelcome()
+
+func printTimesTables(number: Int) {
+    for i in 1...12 {
+        print("\(i) x \(number) is \(i * number)")
     }
 }
+
+printTimesTables(number: 5)
+
+func printTimesTables(number: Int, end: Int) {
+    for i in 1...end {
+        print("\(i) x \(number) is \(i * number)")
+    }
+}
+
+printTimesTables(number: 5, end: 20)
