@@ -1,54 +1,53 @@
-// Day 7 - How to return values from functions
+// Day 7 - How to return multiple values from functions
 
-import Cocoa
-
-let root = sqrt(169)
-print(root)
-
-func rollDice() -> Int {
-    return Int.random(in: 1...6)
+func isUppercase(string: String) -> Bool {
+    string == string.uppercased()
 }
 
-let result = rollDice()
-print(result)
-
-func areLettersIdentical(string1: String, string2: String) -> Bool {
-    let first = string1.sorted()
-    let second = string2.sorted()
-    return first == second
+func getUser() -> [String] {
+    ["Taylor", "Swift"]
 }
 
-print(areLettersIdentical(string1: "cab", string2: "abc"))
+let user = getUser()
+print("Name: \(user[0]) \(user[1])")
 
-func areLettersIdentical2(string1: String, string2: String) -> Bool {
-    return string1.sorted() == string2.sorted()
+func getUser2() -> [String: String] {
+    [
+        "firstName": "Taylor",
+        "lastName": "Swift"
+    ]
 }
 
-print(areLettersIdentical2(string1: "cab", string2: "abc"))
+let user2 = getUser2()
+print("Name: \(user2["firstName", default: "Anonymous"]) \(user2["lastName", default: "Anonymous"])")
 
-func areLettersIdentical3(string1: String, string2: String) -> Bool {
-    string1.sorted() == string2.sorted()
+func getUser3() -> (firstName: String, lastName: String) {
+    (firstName: "Taylor", lastName: "Swift")
 }
 
-print(areLettersIdentical3(string1: "cab", string2: "abc"))
+let user3 = getUser3()
+print("Name: \(user3.firstName) \(user3.lastName)")
 
-func rollDice2() -> Int {
-    return Int.random(in: 1...6)
+func getUser4() -> (firstName: String, lastName: String) {
+    ("Taylor", "Swift")
 }
 
-print(rollDice2())
+let user4 = getUser4()
+print("Name: \(user4.firstName) \(user4.lastName)")
 
-func pythagoras(a: Double, b: Double) -> Double {
-    let input = a * a + b * b
-    let root = sqrt(input)
-    return root
+func getUser5() -> (String, String) {
+    ("Taylor", "Swift")
 }
 
-let c = pythagoras(a: 3, b: 4)
-print(c)
+let user5 = getUser5()
+print("Name: \(user5.0) \(user5.1)")
 
-func pythagoras2(a: Double, b: Double) -> Double {
-    sqrt(a * a + b * b)
-}
+let firstName = user3.firstName
+let lastName = user3.lastName
+print("Name: \(firstName) \(lastName)")
 
-print(pythagoras(a: 3, b: 4))
+let (firstName2, lastName2) = user3
+print("Name: \(firstName2) \(lastName2)")
+
+let (firstName3, _) = user3
+print("Name: \(firstName3)")
