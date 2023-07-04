@@ -1,26 +1,54 @@
-// Day 7 - How to reuse code with functions
+// Day 7 - How to return values from functions
 
-func showWelcome() {
-    print("Welcome to my app!")
-    print("By default This prints out a conversion")
-    print("chart from centimeters to inches, but you")
-    print("can also set a custom range if you want.")
+import Cocoa
+
+let root = sqrt(169)
+print(root)
+
+func rollDice() -> Int {
+    return Int.random(in: 1...6)
 }
 
-showWelcome()
+let result = rollDice()
+print(result)
 
-func printTimesTables(number: Int) {
-    for i in 1...12 {
-        print("\(i) x \(number) is \(i * number)")
-    }
+func areLettersIdentical(string1: String, string2: String) -> Bool {
+    let first = string1.sorted()
+    let second = string2.sorted()
+    return first == second
 }
 
-printTimesTables(number: 5)
+print(areLettersIdentical(string1: "cab", string2: "abc"))
 
-func printTimesTables(number: Int, end: Int) {
-    for i in 1...end {
-        print("\(i) x \(number) is \(i * number)")
-    }
+func areLettersIdentical2(string1: String, string2: String) -> Bool {
+    return string1.sorted() == string2.sorted()
 }
 
-printTimesTables(number: 5, end: 20)
+print(areLettersIdentical2(string1: "cab", string2: "abc"))
+
+func areLettersIdentical3(string1: String, string2: String) -> Bool {
+    string1.sorted() == string2.sorted()
+}
+
+print(areLettersIdentical3(string1: "cab", string2: "abc"))
+
+func rollDice2() -> Int {
+    return Int.random(in: 1...6)
+}
+
+print(rollDice2())
+
+func pythagoras(a: Double, b: Double) -> Double {
+    let input = a * a + b * b
+    let root = sqrt(input)
+    return root
+}
+
+let c = pythagoras(a: 3, b: 4)
+print(c)
+
+func pythagoras2(a: Double, b: Double) -> Double {
+    sqrt(a * a + b * b)
+}
+
+print(pythagoras(a: 3, b: 4))
