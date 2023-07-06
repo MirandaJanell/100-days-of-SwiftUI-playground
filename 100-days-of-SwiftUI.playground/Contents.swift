@@ -16,3 +16,9 @@ func printTimesTables(for number: Int, end: Int = 12) {
 
 printTimesTables(for: 5, end: 20)
 printTimesTables(for: 5)
+
+var characters = ["Lana", "Pam", "Ray", "Sterling"]
+print(characters.count)
+//characters.removeAll() // keepingCapactiy: false is default
+characters.removeAll(keepingCapacity: true)
+print(characters.count)
